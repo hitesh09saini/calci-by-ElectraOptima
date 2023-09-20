@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Energy Audit Report</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Energy Audit Report</h1>
+        <pre id="reportContent"></pre>
+        <a id="downloadLink" download="audit_report.txt">Download Report</a>
+    </div>
+    <script>
+        const reportContentElement = document.getElementById("reportContent");
+        const downloadLink = document.getElementById("downloadLink");
+
+        // Get the report content from URL parameter
+        const reportContent = decodeURIComponent(getUrlParameter("reportContent"));
+        reportContentElement.textContent = reportContent;
+
+        // Set the report content as the download link's href
+        const blob = new Blob([reportContent], { type: "text/plain" });
+        downloadLink.href = URL.createObjectURL(blob);
+        
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remote Home Energy Audit</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Remote Home Energy Audit</h1>
+        <form id="energyAuditForm">
+            <label for="home_address">Home Address:</label>
+            <input type="text" id="home_address" required>
+
+            <label for="residence_type">Type of Residence:</label>
+            <input type="text" id="residence_type" required>
+
+            <!-- Add more input fields for other questions -->
+
+            <label for="generate_report">Generate Energy Audit Report:</label>
+            <input type="checkbox" id="generate_report" value="true">
+
+            <input type="submit" value="Generate Report">
+        </form>
+    </div>
+    <script src="audit.js"></script>
+</body>
+</html>
